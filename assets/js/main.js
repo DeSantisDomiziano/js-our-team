@@ -49,8 +49,22 @@ const team = [
 for(let i = 0; i < team.length; i++) {
 
     const member = team[i]
-    console.log(member);
-    for (const key in member) {
-        console.log(key, member[key])
-    }
+    const markup_member = `
+    <div class="col">
+        <div class="card">
+            <img src="${member.foto}" class="card-img-top">
+            <div class="card-body">
+                <h3>
+                    ${member.nome} 
+                </h3>
+                <p>
+                    ${member.ruolo}
+                </p>
+            </div>
+            
+        </div>
+    </div>`
+    const crad_el = document.querySelector('.row')
+    crad_el.insertAdjacentHTML('beforeend', markup_member) 
 }
+
