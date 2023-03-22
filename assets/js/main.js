@@ -11,7 +11,6 @@ BONUS 2:
 Organizzare i singoli membri in card/schede
 */
 
-// M0
 const team = [
     {
         nome: 'Wayne Barnett',
@@ -44,27 +43,29 @@ const team = [
         foto: './assets/img/barbara-ramos-graphic-designer.jpg',
     },
 ]
-//console.log(team);
 
-for(let i = 0; i < team.length; i++) {
+card_generator(team)
 
-    const member = team[i]
-    const markup_member = `
-    <div class="col">
-        <div class="card">
-            <img src="${member.foto}" class="card-img-top">
-            <div class="card-body">
-                <h3>
-                    ${member.nome} 
-                </h3>
-                <p>
-                    ${member.ruolo}
-                </p>
+function card_generator(array_with_object) {
+    for(let i = 0; i < array_with_object.length; i++) {
+
+        const member = array_with_object[i]
+        const markup_member = `
+        <div class="col">
+            <div class="card">
+                <img src="${member.foto}" class="card-img-top">
+                <div class="card-body">
+                    <h3>
+                        ${member.nome} 
+                    </h3>
+                    <p>
+                        ${member.ruolo}
+                    </p>
+                </div>
+                
             </div>
-            
-        </div>
-    </div>`
-    const crad_el = document.querySelector('.row')
-    crad_el.insertAdjacentHTML('beforeend', markup_member) 
+        </div>`
+        const crad_el = document.querySelector('.row')
+        crad_el.insertAdjacentHTML('beforeend', markup_member) 
+    }
 }
-
