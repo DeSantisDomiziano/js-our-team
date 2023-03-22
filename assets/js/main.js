@@ -44,4 +44,13 @@ const team = [
         foto: 'barbara-ramos-graphic-designer.jpg',
     },
 ]
-console.log(team);
+//console.log(team);
+
+for(let i = 0; i < team.length; i++) {
+
+    const member = team[i]
+    console.log(member);
+    for (const key in member) {
+        console.log(key, member[key])
+    }
+}
